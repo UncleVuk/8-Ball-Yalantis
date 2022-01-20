@@ -64,6 +64,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ballLabel" destination="WR5-Nw-RDb" id="MgH-jC-dl4"/>
                         <segue destination="rxw-rd-wRa" kind="presentation" identifier="goToSettings" id="xWa-by-XUM"/>
                     </connections>
                 </viewController>
