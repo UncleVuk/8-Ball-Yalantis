@@ -7,13 +7,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BallViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
+    
+    // Settings button
+    @IBAction func settingsPressed(_ sender: UIButton) {
+        
+        // Segue to settings view
+        self.performSegue(withIdentifier: "goToSettings", sender: self)
+    }
+    
+    
 
 }
 
