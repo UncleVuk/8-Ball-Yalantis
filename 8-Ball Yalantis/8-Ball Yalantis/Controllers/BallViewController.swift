@@ -18,6 +18,7 @@ class BallViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.becomeFirstResponder() // To get phone shake motion
+        
     }
     
     // Become first responder to get shake motion

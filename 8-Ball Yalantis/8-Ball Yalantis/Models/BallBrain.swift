@@ -16,40 +16,16 @@ struct BallBrain {
     // Function to return answer string
     mutating func getAnswer() -> String {
         // Function to get answer text
-        setAnswer()
+        setAnswerText()
         // Return processed answer
         return answer ?? "Error"
     }
     
-    
-    
     // Set answer text from internet or local file
-    mutating func setAnswer() {
+    mutating func setAnswerText() {
+        
+        
         // Set label text to random hardcoded answer
-        answer = answersHardcoded.randomElement()
+        answer = AnswerList.shared.answers.randomElement()
     }
-    
-    // Array for hardcoded answers
-    let answersHardcoded = ["Yes",
-                            "No",
-                            "No doubt about it",
-                            "Absolutely",
-                            "The stars say no",
-                            "So it shall be",
-                            "Unlikely",
-                            "Indications say yes",
-                            "Positively",
-                            "You can count on it",
-                            "Answer unclear ask later",
-                            "Don't bet on it",
-                            "Looks like yes",
-                            "Chance aren't good",
-                            "Focus and ask again",
-                            "Can't say now",
-                            "Prospect good",
-                            "Very likely",
-                            "Consult me later",
-                            "Cannot foretell now",
-                            "We will be asking questions"]
-    
 }
