@@ -20,11 +20,15 @@ struct AnswerList {
     var answers: [String] = []
     
     // Function to add new item to array
-    mutating func addItem(item: String?) {
-        // Make sure item is not nil
-        if let itemCheck = item {
-            answers.append(itemCheck)
-        }
+    mutating func addItem(item: String) {
+        answers.append(item)
+        writeList()
+    }
+    
+    // Function to remove item from array
+    mutating func removeItem(index: Int) {
+        answers.remove(at: index)
+        writeList()
     }
     
     // Function to read answers from file to array
@@ -34,35 +38,41 @@ struct AnswerList {
             answers = answersCheck
             // Else if there is no file - set default answer array
         } else {
-            answers = ["Yes",
-                       "No",
-                       "No doubt about it",
-                       "Absolutely",
-                       "The stars say no",
-                       "So it shall be",
-                       "Unlikely",
-                       "Indications say yes",
-                       "Positively",
-                       "You can count on it",
-                       "Answer unclear ask later",
-                       "Don't bet on it",
-                       "Looks like yes",
-                       "Chance aren't good",
-                       "Focus and ask again",
-                       "Can't say now",
-                       "Prospect good",
-                       "Very likely",
-                       "Consult me later",
-                       "Cannot foretell now",
-                       "We will be asking questions"]
-            //writeList()
+            setDefaultList()
         }
     }
     
     // Function to save array to file
     mutating func writeList() {
-        // save answer list to file
+        // Save answer list to file
         UserDefaults.standard.set(answers, forKey: "AnswersKey")
         UserDefaults.standard.synchronize()
+    }
+    
+    // Function to set answers array to defaults
+    mutating func setDefaultList() {
+        answers = ["Yes",
+                   "No",
+                   "No doubt about it",
+                   "Absolutely",
+                   "The stars say no",
+                   "So it shall be",
+                   "Unlikely",
+                   "Indications say yes",
+                   "Positively",
+                   "You can count on it",
+                   "Answer unclear ask later",
+                   "Don't bet on it",
+                   "Looks like yes",
+                   "Chance aren't good",
+                   "Focus and ask again",
+                   "Can't say now",
+                   "Prospect good",
+                   "Very likely",
+                   "Consult me later",
+                   "Cannot foretell now",
+                   "Its KGB and we will be asking questions!",
+                   "Jesus Christ it's Jason Bourne"]
+        writeList()
     }
 }

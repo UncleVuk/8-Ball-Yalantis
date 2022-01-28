@@ -37,6 +37,7 @@ class BallViewController: UIViewController {
     }
     
     @IBAction func settingsPressed(_ sender: UIButton) {
+        // Go to settings view
         performSegue(withIdentifier: "goToSettings", sender: self)
     }
     
