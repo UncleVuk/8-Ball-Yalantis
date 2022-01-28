@@ -32,7 +32,7 @@ struct AnswerList {
         // Make sure file is not nil
         if let answersCheck = UserDefaults.standard.array(forKey: "AnswersKey") as? [String] {
             answers = answersCheck
-            // ELse if there is no file - set default answer array
+            // Else if there is no file - set default answer array
         } else {
             answers = ["Yes",
                        "No",
@@ -55,6 +55,7 @@ struct AnswerList {
                        "Consult me later",
                        "Cannot foretell now",
                        "We will be asking questions"]
+            //writeList()
         }
     }
     

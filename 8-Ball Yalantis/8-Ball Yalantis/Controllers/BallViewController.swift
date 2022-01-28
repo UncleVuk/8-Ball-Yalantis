@@ -18,7 +18,6 @@ class BallViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.becomeFirstResponder() // To get phone shake motion
-        
     }
     
     // Become first responder to get shake motion
@@ -32,17 +31,13 @@ class BallViewController: UIViewController {
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         // If motion is detected
         if motion == .motionShake {
-            // Get answer from ball brain
+            // Get answer from ball brain instance
             ballLabel.text = ballBrain.getAnswer()
         }
     }
     
-    
-    // Settings button
     @IBAction func settingsPressed(_ sender: UIButton) {
-        
-        // Segue to settings view
-        self.performSegue(withIdentifier: "goToSettings", sender: self)
+        performSegue(withIdentifier: "goToSettings", sender: self)
     }
-
+    
 }

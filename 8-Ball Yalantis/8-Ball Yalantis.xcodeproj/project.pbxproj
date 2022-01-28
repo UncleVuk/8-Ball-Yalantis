@@ -7,21 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D02032C327996D98005D620D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02032C227996D98005D620D /* SettingsViewController.swift */; };
 		D02032C727998B78005D620D /* BallBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02032C627998B78005D620D /* BallBrain.swift */; };
 		D02032CB2799A764005D620D /* AnswerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02032CA2799A764005D620D /* AnswerList.swift */; };
+		D039012B27A459E80001A1C1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039012A27A459E80001A1C1 /* SettingsTableViewController.swift */; };
 		D079057F2797F93600CFB737 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D079057E2797F93600CFB737 /* AppDelegate.swift */; };
 		D07905812797F93600CFB737 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07905802797F93600CFB737 /* SceneDelegate.swift */; };
 		D07905832797F93600CFB737 /* BallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07905822797F93600CFB737 /* BallViewController.swift */; };
 		D07905862797F93600CFB737 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07905842797F93600CFB737 /* Main.storyboard */; };
 		D07905882797F93A00CFB737 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D07905872797F93A00CFB737 /* Assets.xcassets */; };
 		D079058B2797F93A00CFB737 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07905892797F93A00CFB737 /* LaunchScreen.storyboard */; };
+		D0DCE04B27A1E62900A7FF03 /* AnswerWeb.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DCE04A27A1E62900A7FF03 /* AnswerWeb.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D02032C227996D98005D620D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D02032C627998B78005D620D /* BallBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallBrain.swift; sourceTree = "<group>"; };
 		D02032CA2799A764005D620D /* AnswerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerList.swift; sourceTree = "<group>"; };
+		D039012A27A459E80001A1C1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		D079057B2797F93600CFB737 /* 8-Ball Yalantis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "8-Ball Yalantis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D079057E2797F93600CFB737 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D07905802797F93600CFB737 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +31,7 @@
 		D07905872797F93A00CFB737 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D079058A2797F93A00CFB737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D079058C2797F93A00CFB737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0DCE04A27A1E62900A7FF03 /* AnswerWeb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerWeb.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			children = (
 				D02032C627998B78005D620D /* BallBrain.swift */,
 				D02032CA2799A764005D620D /* AnswerList.swift */,
+				D0DCE04A27A1E62900A7FF03 /* AnswerWeb.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -95,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				D07905822797F93600CFB737 /* BallViewController.swift */,
-				D02032C227996D98005D620D /* SettingsViewController.swift */,
+				D039012A27A459E80001A1C1 /* SettingsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -175,8 +178,9 @@
 				D02032CB2799A764005D620D /* AnswerList.swift in Sources */,
 				D02032C727998B78005D620D /* BallBrain.swift in Sources */,
 				D079057F2797F93600CFB737 /* AppDelegate.swift in Sources */,
+				D039012B27A459E80001A1C1 /* SettingsTableViewController.swift in Sources */,
+				D0DCE04B27A1E62900A7FF03 /* AnswerWeb.swift in Sources */,
 				D07905812797F93600CFB737 /* SceneDelegate.swift in Sources */,
-				D02032C327996D98005D620D /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
