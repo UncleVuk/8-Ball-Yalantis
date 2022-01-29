@@ -11,7 +11,7 @@ class BallViewController: UIViewController {
     
     // Create instance of ball brain
     let ballBrain = BallBrain()
-
+    
     // Link ball label
     @IBOutlet weak var ballLabel: UILabel!
     
@@ -32,8 +32,11 @@ class BallViewController: UIViewController {
         // If motion is detected
         if motion == .motionShake {
             // Get answer from ball brain instance
-            ballBrain.getAnswerText()
-            ballLabel.text = ballBrain.returnAnswer()
+            ballBrain.getAnswerText { [weak self] answer in
+                DispatchQueue.main.async {
+                    self?.ballLabel.text = answer
+                }
+            }
         }
     }
     
