@@ -16,6 +16,8 @@ struct BallBrain {
     
     // Function to return answer string
     mutating func getAnswer() -> String {
+        // Reset answer
+        answer = nil
         // Function to get answer text
         getAnswerText()
         // Return processed answer
