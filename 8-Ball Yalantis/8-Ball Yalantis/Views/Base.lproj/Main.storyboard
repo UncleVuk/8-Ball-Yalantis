@@ -45,6 +45,7 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <imageReference key="image" image="gearshape" catalog="system" symbolScale="large"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" weight="bold"/>
+                                    <color key="baseForegroundColor" name="iconColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="settingsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sin-pm-GAS"/>
@@ -101,7 +102,9 @@
                             <rect key="frame" x="0.0" y="111" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="gray" title="Reset to defaults"/>
+                            <buttonConfiguration key="configuration" style="gray" title="Reset to defaults">
+                                <color key="baseForegroundColor" name="iconColor"/>
+                            </buttonConfiguration>
                             <connections>
                                 <action selector="resetToDefaultsPressed:" destination="D6j-mL-BEN" eventType="touchUpInside" id="wk4-KK-KT2"/>
                             </connections>
@@ -132,11 +135,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="YQ1-AG-ZU4">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="eLm-Bq-Rxg">
+                            <color key="tintColor" name="iconColor"/>
                             <connections>
                                 <action selector="donePressed:" destination="D6j-mL-BEN" id="4VM-bA-gCc"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="JtS-hc-QJA">
+                            <color key="tintColor" name="iconColor"/>
                             <connections>
                                 <action selector="addPressed:" destination="D6j-mL-BEN" id="ueX-Bc-oXv"/>
                             </connections>
@@ -156,6 +161,9 @@
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <namedColor name="backgroundColor">
             <color red="0.92199999094009399" green="0.92199999094009399" blue="0.92199999094009399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="iconColor">
+            <color red="0.22971737380000001" green="0.50771254300000002" blue="0.96867257360000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

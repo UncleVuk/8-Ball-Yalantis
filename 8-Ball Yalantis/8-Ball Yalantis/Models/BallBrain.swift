@@ -24,22 +24,33 @@ struct BallBrain {
     
     // Set answer text from internet or local file
     mutating func getAnswerText() {
-        //getAnswerOnline()
-        getAnswerLocal()
+        
+        // Try to get answer from web
+        getAnswerOnline()
+        
+        // If something went wrong and answer is still set to nil - get answer from local array
+        if answer == nil {
+         getAnswerLocal()
+        }
     }
     
     // Function to try get answer from web, using url address
-    mutating func getAnswerOnline() {
+    func getAnswerOnline() -> String? {
+        
+        var answerFromWeb: String? = nil
+        
         // Constatnt for url
         if let url = URL(string: answerURL) {
+            
             // Create url session
             let session = URLSession(configuration: .default)
+            
             // Give session a task and process it by using closure
             let task = session.dataTask(with: url) { data, response, error in
                 
                 // check if there is an error
                 if error != nil {
-                    // If there is error - print it to console and exit function
+                    // If there is an error - print it to console and exit function
                     print(error!)
                     return
                 }
@@ -47,25 +58,29 @@ struct BallBrain {
                 // If there is no error - process data
                 if let checkData = data {
                     // Run parse JSON func, if data is not nil
-                    // parseJSON(inputData: checkData)
+                    answerFromWeb = parseJSON(inputData: checkData)
                 }
             }
+            
             // Start task
             task.resume()
         }
+        return answerFromWeb
     }
     
     // Function to parse JSON
-    mutating func parseJSON(inputData: Data) {
+    func parseJSON(inputData: Data) -> String? {
         // Create JSON decoder instance
         let decoder = JSONDecoder()
         // do - try - catch block for decoder's decode function
         do {
             let decodedData = try decoder.decode(AnswerWeb.self, from: inputData)
-            // answer = decodedData.magic.answer
+            return decodedData.magic.answer
+            
             // if there is an error - print it to console
         } catch {
             print(error)
+            return nil
         }
     }
     
