@@ -10,7 +10,7 @@ import UIKit
 class BallViewController: UIViewController {
     
     // Create instance of ball brain
-    var ballBrain = BallBrain()
+    let ballBrain = BallBrain()
 
     // Link ball label
     @IBOutlet weak var ballLabel: UILabel!
@@ -32,7 +32,8 @@ class BallViewController: UIViewController {
         // If motion is detected
         if motion == .motionShake {
             // Get answer from ball brain instance
-            ballLabel.text = ballBrain.getAnswer()
+            ballBrain.getAnswerText()
+            ballLabel.text = ballBrain.returnAnswer()
         }
     }
     

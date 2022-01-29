@@ -7,89 +7,88 @@
 
 import Foundation
 
-struct BallBrain {
+class BallBrain {
+    // Variable for answer text
+    var answer: String? = nil
     
-    // Variable for answer
-    var answer: String?
+    var answerStr: AnswerWeb? = nil
+    
     // Constatnt for url to get answer from
     let answerURL = "https://8ball.delegator.com/magic/JSON/Question"
     
-    // Function to return answer string
-    mutating func getAnswer() -> String {
-        // Reset answer
-        answer = nil
-        // Function to get answer text
-        getAnswerText()
-        // Return processed answer
-        return answer ?? "Error"
+    func returnAnswer() -> String {
+        // Return answer text, if everything went wrong and answer is still nil - return Error
+        return answerStr?.magic.answer ?? "Error"
     }
     
-    // Set answer text from internet or local file
-    mutating func getAnswerText() {
+    // Set answer text from internet or local file and return it to controller
+    func getAnswerText() {
+        
+        print("var created")
         
         // Try to get answer from web
-        getAnswerOnline()
-        
-        // If something went wrong and answer is still set to nil - get answer from local array
-        if answer == nil {
-         getAnswerLocal()
+        requestAnswer(urlString: answerURL) { [unowned self] result in
+            print("closure start")
+            // Process result
+            switch result {
+                // If there is some result from web - set answer to data from web
+            case .success(let answerWeb):
+                answer = answerWeb.magic.answer
+                print("Closure success")
+                
+                // If something went wrong - set answer from local array
+            case .failure(let error):
+                answer = self.getAnswerLocal()
+                print("Closure error: \(error)")
+            }
         }
+        print("request complete")
     }
     
-    // Function to try get answer from web, using url address
-    func getAnswerOnline() -> String? {
+    // Function to request answer from web
+    func requestAnswer(urlString: String, completion: @escaping (Result<AnswerWeb, Error> ) -> Void) {
+        // Make sure url is correct
+        guard let url = URL(string: urlString) else { return }
         
-        var answerFromWeb: String? = nil
-        
-        // Constatnt for url
-        if let url = URL(string: answerURL) {
-            
-            // Create url session
-            let session = URLSession(configuration: .default)
-            
-            // Give session a task and process it by using closure
-            let task = session.dataTask(with: url) { data, response, error in
-                
-                // check if there is an error
-                if error != nil {
-                    // If there is an error - print it to console and exit function
-                    print(error!)
+        // Create task as url session
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            // Start web task ansyncronously
+            DispatchQueue.main.async {
+                // Check if there is no error
+                if let error = error {
+                    // If there is error - print it to console and set completion to failure
+                    print("URL session error: \(error)")
+                    completion(.failure(error))
                     return
                 }
                 
-                // If there is no error - process data
-                if let checkData = data {
-                    // Run parse JSON func, if data is not nil
-                    answerFromWeb = parseJSON(inputData: checkData)
-                }
+                // If there is no error - try to process data
+                if let dataCheck = data {
+                    // do - try - catch block of JSON decoder
+                    do {
+                        // Decode JSON from web and put it into answers const
+                        let answers = try JSONDecoder().decode(AnswerWeb.self, from: dataCheck)
+                        self.answerStr = answers
+                        // Set completion success as answers
+                        completion(.success(answers))
+                        // if there is an error - print it to console
+                    } catch {
+                        // Print error to console
+                        print("JSON decoder error: \(error)")
+                        // Set completion to failure
+                        completion(.failure(error))
+                        return
+                    }
+                } else { return }
             }
-            
-            // Start task
-            task.resume()
         }
-        return answerFromWeb
+        // Start url task
+        task.resume()
     }
     
-    // Function to parse JSON
-    func parseJSON(inputData: Data) -> String? {
-        // Create JSON decoder instance
-        let decoder = JSONDecoder()
-        // do - try - catch block for decoder's decode function
-        do {
-            let decodedData = try decoder.decode(AnswerWeb.self, from: inputData)
-            return decodedData.magic.answer
-            
-            // if there is an error - print it to console
-        } catch {
-            print(error)
-            return nil
-        }
-    }
-    
-    // If there is connection problems - get answer from local answer list singleton
-    mutating func getAnswerLocal() {
+    // If there is problems with getting answer from web - get answer from local answer list singleton
+    func getAnswerLocal() -> String? {
         // Set answer text to random hardcoded answer
-        answer = AnswerList.shared.answers.randomElement()
-        
+        return AnswerList.shared.answers.randomElement()
     }
 }
