@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9012C8840DAC3363318ED5D /* Pods_8_Ball_Yalantis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 672EB4CE9196056EE6E3CE0C /* Pods_8_Ball_Yalantis.framework */; };
 		D02032C727998B78005D620D /* BallBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02032C627998B78005D620D /* BallBrain.swift */; };
 		D02032CB2799A764005D620D /* AnswerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02032CA2799A764005D620D /* AnswerList.swift */; };
 		D039012B27A459E80001A1C1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039012A27A459E80001A1C1 /* SettingsTableViewController.swift */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		672EB4CE9196056EE6E3CE0C /* Pods_8_Ball_Yalantis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_8_Ball_Yalantis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A68CC9749BB82444C652538E /* Pods-8-Ball Yalantis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-8-Ball Yalantis.release.xcconfig"; path = "Target Support Files/Pods-8-Ball Yalantis/Pods-8-Ball Yalantis.release.xcconfig"; sourceTree = "<group>"; };
 		D02032C627998B78005D620D /* BallBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallBrain.swift; sourceTree = "<group>"; };
 		D02032CA2799A764005D620D /* AnswerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerList.swift; sourceTree = "<group>"; };
 		D039012A27A459E80001A1C1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		D079058A2797F93A00CFB737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D079058C2797F93A00CFB737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0DCE04A27A1E62900A7FF03 /* AnswerWeb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerWeb.swift; sourceTree = "<group>"; };
+		E519511731F508D80D284DDB /* Pods-8-Ball Yalantis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-8-Ball Yalantis.debug.xcconfig"; path = "Target Support Files/Pods-8-Ball Yalantis/Pods-8-Ball Yalantis.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9012C8840DAC3363318ED5D /* Pods_8_Ball_Yalantis.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +55,8 @@
 			children = (
 				D079057D2797F93600CFB737 /* 8-Ball Yalantis */,
 				D079057C2797F93600CFB737 /* Products */,
+				D1CA196D89F7C304376D40CD /* Pods */,
+				E710F6A9D99A1F1BF7962A19 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +110,24 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		D1CA196D89F7C304376D40CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E519511731F508D80D284DDB /* Pods-8-Ball Yalantis.debug.xcconfig */,
+				A68CC9749BB82444C652538E /* Pods-8-Ball Yalantis.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E710F6A9D99A1F1BF7962A19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				672EB4CE9196056EE6E3CE0C /* Pods_8_Ball_Yalantis.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,9 +135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D079058F2797F93B00CFB737 /* Build configuration list for PBXNativeTarget "8-Ball Yalantis" */;
 			buildPhases = (
+				0825EA96551EA0EE197D9240 /* [CP] Check Pods Manifest.lock */,
 				D07905772797F93600CFB737 /* Sources */,
 				D07905782797F93600CFB737 /* Frameworks */,
 				D07905792797F93600CFB737 /* Resources */,
+				8832DDC3B3645C83CA0343B0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -168,6 +195,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0825EA96551EA0EE197D9240 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-8-Ball Yalantis-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8832DDC3B3645C83CA0343B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-8-Ball Yalantis/Pods-8-Ball Yalantis-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-8-Ball Yalantis/Pods-8-Ball Yalantis-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-8-Ball Yalantis/Pods-8-Ball Yalantis-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D07905772797F93600CFB737 /* Sources */ = {
@@ -324,6 +393,7 @@
 		};
 		D07905902797F93B00CFB737 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E519511731F508D80D284DDB /* Pods-8-Ball Yalantis.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -352,6 +422,7 @@
 		};
 		D07905912797F93B00CFB737 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A68CC9749BB82444C652538E /* Pods-8-Ball Yalantis.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

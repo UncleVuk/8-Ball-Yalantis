@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class BallViewController: UIViewController {
     
@@ -27,14 +28,23 @@ class BallViewController: UIViewController {
         }
     }
     
+//    lazy var window: UIWindow? = {
+//        return UIApplication.shared.windows.first
+//    }()
+    
     // Function to work with motion
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        
         // If motion is detected
         if motion == .motionShake {
+            // Start SVProgressHUD animation
+            SVProgressHUD.show(withStatus: "Thinking...")
             // Get answer from ball brain instance
             ballBrain.getAnswerText { [weak self] answer in
                 DispatchQueue.main.async {
                     self?.ballLabel.text = answer
+                    // End SVProgressHUD animation
+                    SVProgressHUD.dismiss()
                 }
             }
         }

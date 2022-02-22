@@ -1,0 +1,6 @@
+framework module Pods_8_Ball_Yalantis {
+  umbrella header "Pods-8-Ball Yalantis-umbrella.h"
+
+  export *
+  module * { export * }
+}
